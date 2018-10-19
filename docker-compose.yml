@@ -5,10 +5,12 @@ services:
     environment:
       PORT: '5000'
       SHOW_URLS: 'true'
-      KRAJONO_URL: '192.168.99.101'
+      KRAJONO_URL: 'localhost'
       META_PORT: '3000'
       META_ENTRY: 'projects/'
       COMMENT_PORT: '4100'
       COMMENT_ENTRY: 'comments/'
+      VERSION_PORT: '4000'
+      VERSION_ENTRY: 'api/proyects'
     ports:
       - '5000:5000'
