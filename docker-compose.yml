@@ -8,5 +8,7 @@ services:
       KRAJONO_URL: '192.168.99.101'
       META_PORT: '3000'
       META_ENTRY: 'projects/'
+      COMMENT_PORT: '4100'
+      COMMENT_ENTRY: 'comments/'
     ports:
       - '5000:5000'
