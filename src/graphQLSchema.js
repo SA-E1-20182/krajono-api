@@ -12,17 +12,28 @@ import {
 
 import projectsResolvers from './projects/resolvers';
 
+import {
+	imagesMutations,
+	imagesQueries,
+	imagesTypeDef
+} from './images/typeDefs';
+
+import imagesResolvers from './images/resolvers';
+
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
-		projectsTypeDef
+		projectsTypeDef,
+		imagesTypeDef
 	],
 	[
-		projectsQueries
+		projectsQueries,
+		imagesQueries
 	],
 	[
-		projectsMutations
+		projectsMutations,
+		imagesMutations
 	]
 );
 
@@ -31,6 +42,7 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		projectsResolvers
+		projectsResolvers,
+		imagesResolvers
 	)
 });
