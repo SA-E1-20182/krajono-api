@@ -1,28 +1,28 @@
-export const projectsTypeDef = `
-type Project {
+export const commentsTypeDef = `
+type Comment {
     id: Int!
-    name: String!
-    genre: String!
-    description: String!
+    message: String!
+    version_id: Int!
+    image_id: Int!
+    likes: Int!
+    created_by: String!
     created_at: String!
-    total_pages: Int!
-    author_id: String!
-    current_version_id: String!
 }
 
-input ProjectInput {
-    name: String!
-    description: String!
-    genre: String!
+input CommentInput {
+    message: String!
+    version_id: Int!
+    image_id: Int!
+    likes: Int!
 }`;
 
-export const projectsQueries = `
-    allProjects: [Project]!
-    projectByCode(code: Int!): Project!
+export const commentsQueries = `
+    allComments: [Comment]!
+    commentByCode(code: Int!): Comment!
 `;
 
-export const projectsMutations = `
-    createProject(project: ProjectInput!): Project!
-    deleteProject(code: Int!): Int
-    updateProject(code: Int!, project: ProjectInput!): Project!
+export const commentsMutations = `
+    createComment(comment: CommentInput!): Comment!
+    deleteComment(code: Int!): Int
+    updateComment(code: Int!, comment: CommentInput!): Comment!
 `;

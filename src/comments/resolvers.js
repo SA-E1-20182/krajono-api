@@ -5,17 +5,17 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 
 const resolvers = {
 	Query: {
-		allProjects: (_) =>
+		allComments: (_) =>
 			getRequest(URL, ''),
-		projectByCode: (_, { code }) =>
+		commentByCode: (_, { code }) =>
 			generalRequest(`${URL}/${code}`, 'GET'),
 	},
 	Mutation: {
-		createProject: (_, { project }) =>
-			generalRequest(`${URL}`, 'POST', project),
-		updateProject: (_, { code, project }) =>
-			generalRequest(`${URL}/${code}`, 'PUT', project),
-		deleteProject: (_, { code }) =>
+		createComment: (_, { comment }) =>
+			generalRequest(`${URL}`, 'POST', comment),
+		updateComment: (_, { code, comment }) =>
+			generalRequest(`${URL}/${code}`, 'PUT', comment),
+		deleteComment: (_, { code }) =>
 			generalRequest(`${URL}/${code}`, 'DELETE')
 	}
 };
