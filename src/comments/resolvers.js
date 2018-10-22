@@ -7,7 +7,7 @@ const resolvers = {
 	Query: {
 		allComments: (_) =>
 			getRequest(URL, ''),
-		commentyCode: (_, { code }) =>
+		commentByCode: (_, { code }) =>
 			generalRequest(`${URL}/${code}`, 'GET'),
 	},
 	Mutation: {
