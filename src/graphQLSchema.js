@@ -1,7 +1,7 @@
 import merge from 'lodash.merge';
 import GraphQLJSON from 'graphql-type-json';
 import { makeExecutableSchema } from 'graphql-tools';
-
+import { GraphQLUpload } from 'graphql-upload'
 import { mergeSchemas } from './utilities';
 
 import {
@@ -25,6 +25,7 @@ const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
 		projectsTypeDef,
+		'scalar Upload',
 		imagesTypeDef
 	],
 	[
@@ -42,6 +43,7 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
+		{ Upload: GraphQLUpload },
 		projectsResolvers,
 		imagesResolvers
 	)
