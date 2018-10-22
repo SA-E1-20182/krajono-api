@@ -6,7 +6,8 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 const resolvers = {
 	Query: {
 		allComments: (_) =>
-			getRequest(URL, ''),
+			// getRequest(URL, ''),
+			generalRequest(`${URL}`, 'GET'),
 		commentByCode: (_, { code }) =>
 			generalRequest(`${URL}/${code}`, 'GET'),
 	},

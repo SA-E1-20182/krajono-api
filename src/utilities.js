@@ -62,6 +62,7 @@ export function addParams(url, parameters) {
  */
 export function getRequest(url, path, parameters) {
 	const queryUrl = addParams(`${url}/${path}`, parameters);
+	console.log(queryUrl)
 	return generalRequest(queryUrl, 'GET');
 }
 
