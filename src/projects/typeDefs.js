@@ -14,6 +14,7 @@ input ProjectInput {
     name: String!
     description: String!
     genre: String!
+    author_id: String!
 }`;
 
 export const projectsQueries = `
