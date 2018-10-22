@@ -12,7 +12,6 @@ const resolvers = {
 	},
 	Mutation: {
 		createProject: (_, { project }) => {
-			console.log(project);
 			generalRequest(`${URL}`, 'POST', project)
 		},
 		updateProject: (_, { code, project }) =>

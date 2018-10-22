@@ -8,7 +8,7 @@ type Project {
     total_pages: Int!
     author_id: String!
     current_version_id: String!
-}
+}   
 
 input ProjectInput {
     name: String!
