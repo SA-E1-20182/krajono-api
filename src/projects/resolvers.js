@@ -11,8 +11,10 @@ const resolvers = {
 			generalRequest(`${URL}/${code}`, 'GET'),
 	},
 	Mutation: {
-		createProject: (_, { project }) =>
-			generalRequest(`${URL}`, 'POST', project),
+		createProject: (_, { project }) => {
+			console.log(project);
+			generalRequest(`${URL}`, 'POST', project)
+		},
 		updateProject: (_, { code, project }) =>
 			generalRequest(`${URL}/${code}`, 'PUT', project),
 		deleteProject: (_, { code }) =>
