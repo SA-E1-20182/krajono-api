@@ -20,20 +20,31 @@ import {
 
 import commentsResolvers from './comments/resolvers';
 
+import {
+	versionsMutations,
+	versionsQueries,
+	versionsTypeDef
+} from './versions/typeDefs';
+
+import versionsResolvers from './versions/resolvers';
+
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
 		projectsTypeDef,
-		commentsTypeDef
+		commentsTypeDef,
+		versionsTypeDef
 	],
 	[
 		projectsQueries,
-		commentsQueries
+		commentsQueries,
+		versionsQueries
 	],
 	[
 		projectsMutations,
-		commentsMutations
+		commentsMutations,
+		versionsMutations
 	]
 );
 
@@ -43,6 +54,7 @@ export default makeExecutableSchema({
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		projectsResolvers,
-		commentsResolvers
+		commentsResolvers,
+		versionsResolvers
 	)
 });
