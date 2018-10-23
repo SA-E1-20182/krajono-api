@@ -25,8 +25,7 @@ const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
 		projectsTypeDef,
-		'scalar Upload',
-		imagesTypeDef
+		'scalar Upload'
 	],
 	[
 		projectsQueries,
@@ -43,8 +42,8 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		{ Upload: GraphQLUpload },
 		projectsResolvers,
+		{ Upload: GraphQLUpload},
 		imagesResolvers
 	)
 });

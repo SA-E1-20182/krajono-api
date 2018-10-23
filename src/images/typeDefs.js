@@ -1,12 +1,5 @@
 export const imagesTypeDef = `
 
-input ImageInput{
-  project: String!
-  version: Int!
-  Page: Int!
-  picture: Upload
-}
-
 `;
 
 export const imagesQueries = `
@@ -14,7 +7,7 @@ export const imagesQueries = `
 `;
 
 export const imagesMutations = `
-    uploadImage(project: ImageInput!): Int!
-    deleteImage(code: Int!): String!
-    updateImage(code: Int!, file: Upload!): String!
+    singleUpload(file: Upload!): Int!
+    deleteImage(code: Int!): Boolean!
+    singleUpdate(code: Int!, file: Upload!): Boolean!
 `;
