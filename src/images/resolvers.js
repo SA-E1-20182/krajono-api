@@ -26,7 +26,9 @@ const resolvers = {
 		singleUpload: (obj, { file }) => processUpload(file),
 		singleUpdate: (obj, { code, file }) => processUpdate(code, file),
 		deleteImage: (_, { code }) =>
-			generalRequest(`${URL}/${code}`, 'DELETE')
+			generalRequest(`${URL}/${code}`, 'DELETE'),
+    collectionOfImages: (_, { codes }) =>
+      generalRequest(`${URL}/collection`, 'POST', codes)
 	}
 };
 
