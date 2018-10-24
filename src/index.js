@@ -6,10 +6,11 @@ import koaCors from '@koa/cors';
 
 import { graphiqlKoa, graphqlKoa } from 'apollo-server-koa';
 import graphQLSchema from './graphQLSchema';
+import { graphqlUploadKoa } from 'graphql-upload'
 
 import { formatErr } from './utilities';
 
-const app = new Koa();
+const app = new Koa().use(graphqlUploadKoa({ maxFileSize: 10000, maxFiles: 1 }));
 const router = new KoaRouter();
 const PORT = process.env.PORT || 5000;
 

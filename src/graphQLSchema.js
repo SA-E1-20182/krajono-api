@@ -1,7 +1,7 @@
 import merge from 'lodash.merge';
 import GraphQLJSON from 'graphql-type-json';
 import { makeExecutableSchema } from 'graphql-tools';
-
+import { GraphQLUpload } from 'graphql-upload'
 import { mergeSchemas } from './utilities';
 
 import {
@@ -13,6 +13,7 @@ import {
 import projectsResolvers from './projects/resolvers';
 
 import {
+<<<<<<< HEAD
 	commentsMutations,
 	commentsQueries,
 	commentsTypeDef
@@ -28,23 +29,36 @@ import {
 
 import versionsResolvers from './versions/resolvers';
 
+import {
+	imagesMutations,
+	imagesQueries,
+	imagesTypeDef
+} from './images/typeDefs';
+
+import imagesResolvers from './images/resolvers';
+>>>>>>> image
+
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
 		projectsTypeDef,
 		commentsTypeDef,
-		versionsTypeDef
+		versionsTypeDef,
+		'scalar Upload'
 	],
 	[
 		projectsQueries,
 		commentsQueries,
-		versionsQueries
+		versionsQueries,
+		imagesQueries
 	],
 	[
 		projectsMutations,
 		commentsMutations,
-		versionsMutations
+		versionsMutations,
+		imagesMutations
+
 	]
 );
 
@@ -55,6 +69,8 @@ export default makeExecutableSchema({
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		projectsResolvers,
 		commentsResolvers,
-		versionsResolvers
+		versionsResolvers,
+		{ Upload: GraphQLUpload},
+		imagesResolvers
 	)
 });

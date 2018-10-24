@@ -10,5 +10,7 @@ services:
       META_ENTRY: 'projects/'
       COMMENT_PORT: '4100'
       COMMENT_ENTRY: 'comments'
+      IMAGE_PORT: '3003'
+      IMAGE_ENTRY: 'image'
     ports:
       - '5000:5000'
