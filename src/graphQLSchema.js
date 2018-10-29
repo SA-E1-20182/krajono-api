@@ -13,7 +13,6 @@ import {
 import projectsResolvers from './projects/resolvers';
 
 import {
-<<<<<<< HEAD
 	commentsMutations,
 	commentsQueries,
 	commentsTypeDef
@@ -36,7 +35,7 @@ import {
 } from './images/typeDefs';
 
 import imagesResolvers from './images/resolvers';
->>>>>>> image
+
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
