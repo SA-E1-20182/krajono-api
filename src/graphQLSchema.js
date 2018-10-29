@@ -35,8 +35,6 @@ import {
 } from './images/typeDefs';
 
 import imagesResolvers from './images/resolvers';
-
-
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
