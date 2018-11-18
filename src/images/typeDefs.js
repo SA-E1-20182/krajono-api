@@ -7,8 +7,6 @@ export const imagesQueries = `
 `;
 
 export const imagesMutations = `
-    singleUpload(file: Upload!): Int!
     deleteImage(code: Int!): Boolean!
-    singleUpdate(code: Int!, file: Upload!): Boolean!
     collectionOfImages(codes: [Int!]): [String!]
 `;
