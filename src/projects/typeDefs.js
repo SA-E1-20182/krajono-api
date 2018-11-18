@@ -4,6 +4,7 @@ type Project {
     name: String!
     genre: String!
     description: String!
+    cover_url: String!
     created_at: String!
     total_pages: Int!
     author_id: String!
@@ -15,6 +16,7 @@ input ProjectInput {
     description: String!
     genre: String!
     author_id: String!
+    cover_url: String!
 }`;
 
 export const projectsQueries = `

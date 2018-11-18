@@ -35,6 +35,14 @@ import {
 } from './images/typeDefs';
 
 import imagesResolvers from './images/resolvers';
+
+import {
+	authorsMutations,
+	authorsQueries,
+	authorsTypeDef
+} from './authors/typeDefs';
+
+import authorsResolvers from './authors/resolvers';
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
@@ -42,20 +50,22 @@ const mergedTypeDefs = mergeSchemas(
 		projectsTypeDef,
 		commentsTypeDef,
 		versionsTypeDef,
-		'scalar Upload'
+		'scalar Upload',
+		authorsTypeDef
 	],
 	[
 		projectsQueries,
 		commentsQueries,
 		versionsQueries,
-		imagesQueries
+		imagesQueries,
+		authorsQueries
 	],
 	[
 		projectsMutations,
 		commentsMutations,
 		versionsMutations,
-		imagesMutations
-
+		imagesMutations,
+		authorsMutations
 	]
 );
 
@@ -68,6 +78,7 @@ export default makeExecutableSchema({
 		commentsResolvers,
 		versionsResolvers,
 		{ Upload: GraphQLUpload},
-		imagesResolvers
+		imagesResolvers,
+		authorsResolvers
 	)
 });
