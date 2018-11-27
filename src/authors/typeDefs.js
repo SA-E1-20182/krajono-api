@@ -1,11 +1,12 @@
 export const authorsTypeDef = `
 type Author {
-    id: Int!
+    username: String!
     name: String!
     projects: [Int]!
 }
 
 input AuthorInput {
+    username: String!
     name: String!
 }`;
 
