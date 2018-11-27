@@ -8,10 +8,6 @@ type Author {
 input AuthorInput {
     username: String!
     name: String!
-}
-
-input Project{
-    project: Int
 }`;
 
 export const authorsQueries = `
@@ -21,6 +17,6 @@ export const authorsQueries = `
 
 export const authorsMutations = `
     createAuthor(author: AuthorInput!): Author!
-    addProjectToAuthor(username: String!, project: Project!): boolean
-    removeProjectFromAuthor(username: String!, project: Project!): boolean
+    addProjectToAuthor(username: String!, project: int): boolean
+    removeProjectFromAuthor(username: String!, project: int): boolean
 `;
