@@ -27,5 +27,5 @@ export const projectsQueries = `
 export const projectsMutations = `
     createProject(project: ProjectInput!): Project!
     deleteProject(code: Int!): Int
-    updateProject(code: Int!, project: ProjectInput!): Project!
+    updateProject(code: Int!, project: ProjectInput!): Project
 `;

@@ -15,8 +15,8 @@ const resolvers = {
 	Mutation: {
 		deleteImage: (_, { code }) =>
 			generalRequest(`${URL}/${code}`, 'DELETE'),
-    collectionOfImages: (_, { codes }) =>
-      generalRequest(`${URL}/collection`, 'POST', codes)
+		collectionOfImages: (_, { codes }) =>
+			generalRequest(`${URL}/collection`, 'POST', {codes})
 	}
 };
 

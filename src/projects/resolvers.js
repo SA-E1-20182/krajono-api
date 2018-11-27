@@ -16,7 +16,7 @@ const resolvers = {
 		updateProject: (_, { code, project }) =>
 			generalRequest(`${URL}/${code}`, 'PUT', project),
 		deleteProject: (_, { code }) =>
-			generalRequest(`${URL}/${code}`, 'DELETE')
+			generalRequest(`${URL}/${code}`, 'DELETE'),
 	}
 };
 
