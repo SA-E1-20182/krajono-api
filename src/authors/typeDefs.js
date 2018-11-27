@@ -8,13 +8,19 @@ type Author {
 input AuthorInput {
     username: String!
     name: String!
+}
+
+input Project{
+    project: Int
 }`;
 
 export const authorsQueries = `
-    getAuthorByName(name: String!): Author!
-    fetchAuthor(id: Int!): Author!
+    getAuthor(username: String!): Author!
+    getAllAuthors: Author
 `;
 
 export const authorsMutations = `
-    createAuthor(author: AuthorInput!): Comment!
+    createAuthor(author: AuthorInput!): Author!
+    addProjectToAuthor(username: String!, project: Project!): boolean
+    removeProjectFromAuthor(username: String!, project: Project!): boolean
 `;
