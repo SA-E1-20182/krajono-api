@@ -11,10 +11,12 @@ input AuthorInput {
 }`;
 
 export const authorsQueries = `
-    getAuthorByName(name: String!): Author!
-    fetchAuthor(id: Int!): Author!
+    getAuthor(username: String!): Author!
+    getAllAuthors: [Author!]
 `;
 
 export const authorsMutations = `
-    createAuthor(author: AuthorInput!): Comment!
+    createAuthor(author: AuthorInput!): Author!
+    addProjectToAuthor(username: String!, project: Int!): Boolean
+    removeProjectFromAuthor(username: String!, project: Int!): Boolean
 `;
