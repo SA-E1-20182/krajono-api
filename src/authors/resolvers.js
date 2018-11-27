@@ -16,7 +16,7 @@ const resolvers = {
 			generalRequest(`http://${url}:${port}/${entryPoint}/create`, 'POST', author),
 		addProjectToAuthor: (_, { username, project }) =>
 			generalRequest(`http://${url}:${port}/${entryPoint}/${username}/addProject`, 'PATCH', project),
-		removeProjectToAuthor: (_, { username, project }) =>
+		removeProjectFromAuthor: (_, { username, project }) =>
 			generalRequest(`http://${url}:${port}/${entryPoint}/${username}/removeProject`, 'PATCH', project)
 	}
 };
