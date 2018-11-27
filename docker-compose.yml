@@ -3,7 +3,7 @@ services:
   krajono-api:
     build: .
     environment:
-      PORT: '7999'
+      PORT: '5000'
       SHOW_URLS: 'true'
       # KRAJONO_URL: '35.237.231.50'
       KRAJONO_URL: '192.168.99.101'
