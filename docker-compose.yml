@@ -16,4 +16,4 @@ services:
       AUTHORS_PORT: '7999'
       AUTHORS_ENTRY: 'author'
     ports:
-      - '7999:7999'
+      - '5000:5000'
