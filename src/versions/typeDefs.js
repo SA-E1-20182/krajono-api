@@ -1,6 +1,6 @@
 export const versionsTypeDef = `
 type Version {
-    id: Int!
+    version_id: Int!
     user_id: Int!
     project_id: Int!
     inserted_at: String!
