@@ -1,6 +1,6 @@
 FROM node:carbon-slim
 
-# Create app directory
+# Create app  directory
 WORKDIR /git/krajono-api
 
 # Install app dependencies
