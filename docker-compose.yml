@@ -15,5 +15,7 @@ services:
       IMAGE_ENTRY: 'image'
       AUTHORS_PORT: '7999'
       AUTHORS_ENTRY: 'author'
+      USERS_PORT: '3396'
+      USERS_ENTRY: 'user'
     ports:
       - '5000:5000'
