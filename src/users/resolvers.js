@@ -8,17 +8,17 @@ console.log("URL for Users: " + URL);
 const resolvers = {
 	Query: {
 		checkSession: (_, { token }) =>
-        authRequest(`${URL}`, 'GET', token),
+        authRequest(`${URL}/`, 'GET', token),
 	},
 	Mutation: {
 		createUser: (_, { user }) =>
-			generalRequest(`${URL}`, 'POST', user),
+			generalRequest(`${URL}users/create`, 'POST', {user}),
 		updateUser: (_, { id, user, token }) =>
 			authRequest(`${URL}/${id}`, 'PATCH', token, user),
 		deleteUser: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'DELETE'),
 		createSession: (_, { auth }) =>
-			generalRequest(`${URL}/auth`, 'POST', auth),
+			generalRequest(`${URL}user_token`, 'POST', auth),
 		}
 };
 
