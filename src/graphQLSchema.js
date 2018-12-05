@@ -3,7 +3,18 @@ import GraphQLJSON from 'graphql-type-json';
 import { makeExecutableSchema } from 'graphql-tools';
 import { GraphQLUpload } from 'graphql-upload'
 import { mergeSchemas } from './utilities';
+import {
+	usersMutations,
+	usersQueries,
+	usersTypeDef
+} from './users/typeDefs';
 
+import {
+		authMutations,
+		authTypeDef
+} from './auth/typeDefs';
+import usersResolvers from './users/resolvers';
+import authResolvers from './auth/resolvers';
 import {
 	projectsMutations,
 	projectsQueries,
@@ -47,6 +58,8 @@ import authorsResolvers from './authors/resolvers';
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
+		usersTypeDef, 
+		authTypeDef,
 		projectsTypeDef,
 		commentsTypeDef,
 		versionsTypeDef,
@@ -54,6 +67,7 @@ const mergedTypeDefs = mergeSchemas(
 		authorsTypeDef
 	],
 	[
+		usersQueries,
 		projectsQueries,
 		commentsQueries,
 		versionsQueries,
@@ -61,6 +75,8 @@ const mergedTypeDefs = mergeSchemas(
 		authorsQueries
 	],
 	[
+		usersMutations, 
+		authMutations,
 		projectsMutations,
 		commentsMutations,
 		versionsMutations,
@@ -74,6 +90,8 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
+		usersResolvers, 
+		authResolvers,
 		projectsResolvers,
 		commentsResolvers,
 		versionsResolvers,

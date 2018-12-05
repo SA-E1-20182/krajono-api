@@ -1,6 +1,6 @@
 FROM node:carbon-slim
 
-# Create app directory
+# Create app  directory
 WORKDIR /git/krajono-api
 
 # Install app dependencies
@@ -12,3 +12,4 @@ COPY . /git/krajono-api/
 RUN npm run prepublish
 
 CMD [ "npm", "run", "runServer" ]
+EXPOSE 5000
