@@ -1,3 +1,3 @@
-export const url = '192.168.99.101'
-export const port = '4000'
-export const entryPoint = 'api/projects/'
+export const url = process.env.KRAJONO_URL  
+export const port = process.env.VERSION_PORT
+export const entryPoint = process.env.VERSION_ENTRY
