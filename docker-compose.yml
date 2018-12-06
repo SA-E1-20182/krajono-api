@@ -18,11 +18,11 @@ services:
       AUTHORS_PORT: '7999'
       AUTHORS_ENTRY: 'author'
 
-      USERS_URL: '35.247.48.230'
+      USERS_URL: '35.247.37.179'
       USERS_PORT: '3009'
       USERS_ENTRY: ''
 
-      AUTH_URL: '35.247.48.230'
+      AUTH_URL: '35.247.37.179'
       AUTH_PORT: '3009'
       AUTH_ENTRY: 'ldap'
     ports:
