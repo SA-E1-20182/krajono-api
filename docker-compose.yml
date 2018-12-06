@@ -17,11 +17,13 @@ services:
       IMAGE_ENTRY: 'image'
       AUTHORS_PORT: '7999'
       AUTHORS_ENTRY: 'author'
+
+      USERS_URL: '35.247.48.230'
       USERS_PORT: '3009'
       USERS_ENTRY: ''
 
-      AUTH_URL: '35.247.37.179'
-      AUTH_PORT: '3396'
+      AUTH_URL: '35.247.48.230'
+      AUTH_PORT: '3009'
       AUTH_ENTRY: 'ldap'
     ports:
       - '5000:5000'
